@@ -39,7 +39,20 @@ npm install
 ````bash
 npm run dev
 ````
-4. Abre http://localhost:3000 en tu navegador.
+4. App available at  http://localhost:3000 
+
+
+## Using docker
+Build docker image: 
+``
+    docker build . -t fso-nextjs-cloudrun:latest
+``
+
+Run docker image: 
+`` 
+    docker run -p 3000:3000 -e PORT=3000  fso-nextjs-cloudrun
+``
+
 
 
 Red: #F43F5E
