@@ -1,32 +1,78 @@
+import React, { useState, useEffect } from "react";
+import classNames from "classnames";
+import { Transition } from "@headlessui/react";
 import Image from "next/image";
-import Link from "next/link";
+
+const images = [
+    "/images/hero/hero-carousel-1.jpg",
+    "/images/hero/hero-carousel-2.jpg",
+    "/images/hero/hero-carousel-3.jpg",
+    "/images/hero/hero-carousel-4.jpg",
+    "/images/hero/hero-carousel-5.jpg",
+];
 
 export function Hero() {
-  return (
-    <div className="bg-white dark:bg-neutral-900">
-      <div className="max-w-7xl mx-auto pt-20 pb-16 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2">
-        <div className="pt-6 md:pt-32 justify-center text-center sm:justify-start sm:text-start">
-          <h1 className="text-5xl font-bold">
-            Welcome to <br />{" "}
-            <span className="text-amber-500 font-extrabold">Our web portal</span>
-          </h1>
-          <p className="pt-6 text-base w-auto sm:w-10/12 md:w-10/12 dark:text-neutral-400">
-            Here we detail the services we provide to our customers.
-          </p>
-        </div>
+    const INTERVAL_LENGTH = 2000;
+    const AUTOPLAY = true;
+    const [currentIndex, setCurrentIndex] = useState(0);
 
-        <div className="flex items-center mt-12">
-          <Image
-            src="/images/hero/hero.svg"
-            alt="Image hero description"
-            width={1025}
-            height={662}
-            quality={75}
-            sizes="100vw"
-            priority
-          />
-        </div>
-      </div>
-    </div>
-  );
+    const nextSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const prevSlide = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        );
+    };
+
+    useEffect(() => {
+        if (!AUTOPLAY) return;
+        const interval = setInterval(nextSlide, INTERVAL_LENGTH);
+        return () => clearInterval(interval);
+    }, [AUTOPLAY]);
+
+    return (
+        <section className="relative h-96 w-full overflow-hidden text-center mt-16">
+            {images.map((item, index) => (
+                <Transition
+                    key={index}
+                    show={currentIndex === index}
+                    enter="transition-opacity duration-1000"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="transition-opacity duration-1000"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="absolute w-full h-full">
+                        <Image src={item} alt={`Slide ${index}`} layout="fill" objectFit="cover" />
+                    </div>
+                </Transition>
+            ))}
+            {/* Controls */}
+            <div className="absolute w-full h-full flex justify-between items-center">
+                <button className="m-4 h-8 w-8 rounded-full bg-slate-200" onClick={prevSlide}>
+                    {"<"}
+                </button>
+                <button className="m-4 h-8 w-8 rounded-full bg-slate-200" onClick={nextSlide}>
+                    {">"}
+                </button>
+            </div>
+            {/* Indicator */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex justify-center gap-4">
+                {images.map((_, index) => (
+                    <div
+                        key={index}
+                        className={classNames("h-2 w-2 rounded-full duration-1000", {
+                            "bg-slate-300": index !== currentIndex,
+                            "bg-slate-800": index === currentIndex
+                        })}
+                    />
+                ))}
+            </div>
+        </section>
+    );
 }
