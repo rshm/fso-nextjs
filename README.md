@@ -53,6 +53,7 @@ Run docker image:
     docker run -p 3000:3000 -e PORT=3000  fso-nextjs-cloudrun
 ``
 
+## Test the build wiith commit
 
 
 Red: #F43F5E
