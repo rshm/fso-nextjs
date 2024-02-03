@@ -17,14 +17,14 @@ La plantilla Halley incluye las siguientes características principales:
 - 🛍️ Prefooter call to action to confirm sale.
 - 📄 Footer with main links and social network links.
 
-# 🛠️ Requisitos
+# 🛠️ Requirements
 - Node.js (versión 10 o superior)
 - NPM (o Yarn)
 - Conocimientos básicos de Next.js y Tailwind CSS
 
 
-# 📥 Instalación
-1. Clona el repositorio:
+# 📥 Installation
+1. Clone the  repository:
 
 ````bash
 git clone https://github.com/humberni/halley
@@ -34,7 +34,7 @@ git clone https://github.com/humberni/halley
 ````bash
 npm install
 ````
-3. Ejecuta la aplicación en modo desarrollo:
+3. Run application in dev env:
 
 ````bash
 npm run dev
