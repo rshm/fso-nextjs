@@ -13,7 +13,7 @@ const images = [
 
 export function Hero() {
     const INTERVAL_LENGTH = 2000;
-    const AUTOPLAY = true;
+    const AUTOPLAY = false;
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const nextSlide = () => {
@@ -47,8 +47,8 @@ export function Hero() {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="absolute w-full h-full">
-                        <Image src={item} alt={`Slide ${index}`} layout="fill" objectFit="cover" />
+                    <div className="absolute w-full h-full brightness-50">
+                        <Image src={item} alt={`Slide ${index}`} fill objectFit="cover" />
                     </div>
                 </Transition>
             ))}
