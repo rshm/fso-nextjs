@@ -5,22 +5,12 @@ const faqitems = [
   {
     question: "What is your refund policy?",
     response:
-      "If youre unhappy with your purchase for any reason, email us within 90 days and well refund you in full, no questions asked.",
-  },
-  {
-    question: "Do you offer technical support?",
-    response:
-      "No, we dont offer technical support for free downloads. Please purchase a support plan to get 6 months of support.",
-  },
-  {
-    question: "What is your refund policy? If youre unhappy with your purchase for any reasonIf youre unhappy with your purchase for any reasonIf youre unhappy with your purchase for any reason",
-    response:
-      "If youre unhappy with your purchase for any reason, email us within 90 days and well refund you in full, no questions asked.",
+      "If you are unhappy with your purchase for any reason, email us within 90 days and well refund you in full, no questions asked.",
   },
   {
     question: "What forms of payment do you accept?",
     response:
-      "You can use any debit or credit card to pay for a subscription. We secure your card details and process payments via Stripe. Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      "You can use any debit or credit card to pay for a subscription. ",
   },
 ];
 
