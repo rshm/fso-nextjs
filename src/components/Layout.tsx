@@ -8,8 +8,8 @@ const Layout = (props: any) => {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Halley",
-    description: `Halley is a landing page template built with Nextjs and Tailwindcss`,
+    title: "FSO",
+    description: `Safety and Audits`,
     image: "/images/seo/halley-banner.png",
     type: "website",
     ...customMeta,

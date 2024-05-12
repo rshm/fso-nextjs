@@ -35,8 +35,8 @@ export function Services() {
         <h2 className="text-4xl font-bold">What we do?</h2>
 
         <p className="pt-6 pb-6 text-base max-w-2xl text-center m-auto dark:text-neutral-400">
-          Halley is consectetur Obcaecati veniam explicabo perspiciatis sapiente
-          saepe sequi atque aut ullam aliquam.
+          We provide inspection services from small sized buildings to high rise buildings and audit fire safety guidelines ,
+          procedures according to NFPA 101 Life Safety code, National Building code 2016 Part IV.
         </p>
       </div>
 

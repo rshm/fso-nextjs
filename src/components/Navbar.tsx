@@ -9,7 +9,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Services", href: "#services", current: false },
-  { name: "Pricing", href: "#pricing", current: false },
+  { name: "About Me", href: "#pricing", current: false },
   { name: "Faq", href: "#faq", current: false },
   { name: "Contact", href: "#contact", current: false },
 ];
@@ -52,7 +52,7 @@ export default function Navbar() {
                         className={classNames(
                           item.current
                             ? "text-neutral-900 dark:text-neutral-400 "
-                            : "text-neutral-900 dark:text-neutral-400 hover:underline",
+                            : "text-neutral-900 dark:text-neutral-400 hover:text-amber-400",
                           "text-base font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
